@@ -6,6 +6,14 @@ require('dotenv').config();
 app.use(express.json())
 const users = []
 
+app.get('/', (req,res) =>{
+    res.send()
+})
+
+app.get('/favicon.ico', (req,res) =>{
+    res.send()
+})
+
 app.get('/get', (req,res) =>{
     res.send(users)
 })
