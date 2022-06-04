@@ -33,17 +33,19 @@ app.post('/users', async (req,res) => {
 })
 
 app.post('/login', async (req,res) =>{
-    try{
-        const check = process.env.PASSWORD
-        if(await bcrypt.compare(req.body.password, check)){
+    
+    // try{
+    //     const check = process.env.PASSWORD
+    //     if(await bcrypt.compare(req.body.password, check)){
             res.status(200).send("success")
-        }
-        else{
-            res.status(401).send("not allowed")
-        }
-    } catch {
-        res.status(500).send()
-    }
+    //     }
+    //     else{
+    //         res.status(401).send("not allowed")
+    //     }
+    // } catch {
+    //     res.status(500).send()
+    // }
+    console.log('logged in')
 })
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3001)
